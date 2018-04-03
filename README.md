@@ -5,7 +5,7 @@
 </p>
 
 ## About
-Welcome to Limeberry Framework. Limeberry is a simple but great application development framework. It is build with PHP for PHP developers. Limeberry aims to help you in your coding process by speeding up you with ready to use libraries and fewer need for configuration. The framework was developed based on the MVC architectural design.
+Welcome to Limeberry Framework. Limeberry is an excellent but straightforward application development framework. Limeberry aims to help you in your coding process by speeding up development with ready to use libraries that require minimal configuration. The structure was developed based on the MVC architectural design.
 
 ## Who is it for ?<br>
 In simple words; it is for you. <br>
