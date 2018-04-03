@@ -12,11 +12,7 @@
 **/
 
 require_once 'base.php';
-
-
     spl_autoload_register("loadframework");
-    spl_autoload_register("loadcontroller");
-        
         
     /**
     * Loads core framework modules, libraries, classes.
@@ -29,20 +25,6 @@ require_once 'base.php';
         if(file_exists($class))
         {
             require_once($class);
-        }
-    }
-        
-    /**
-    * This function loads all files in controllers directory when needed.
-    * @ignore
-    */
-    function loadcontroller($class)
-    {
-        global $application_folder;
-        $fileName = $application_folder.DS.'controller'.DS.$class.'.php';
-        if(file_exists($fileName))
-        {
-            require_once $fileName;
         }
     }
 ?>

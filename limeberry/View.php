@@ -15,7 +15,7 @@ namespace limeberry
     require_once 'base.php';
    
     /**
-    *A instance of view files.
+    * This class is used to create an instance of view files.
     */
     class View   
     {
@@ -50,14 +50,20 @@ namespace limeberry
             if($isUsual)
             {
                 if(file_exists(ROOT.DS.$application_folder.DS.'view'.DS.$viewScript))
-                {return true;}
+                {
+                    return true;
+                }else{
+                    return false;
+                }
             }else{
                 if(file_exists(ROOT.DS.$application_folder.DS.$viewScript))
-                {return true;}
+                {
+                    return true;
+                }else{
+                    return false;
+                }
             }
 	}   
-        
     }
-    
 }
 ?>

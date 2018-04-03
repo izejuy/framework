@@ -7,7 +7,7 @@
 *	
 *	@package Limeberry Framework
 *	@author Sinan SALIH
-*	@copyright Copyright (C) 2017 Sinan SALIH
+*	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
 
