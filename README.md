@@ -1,7 +1,7 @@
 
 # Limeberry Framework
 <p align="center">
-  <img src="https://limeberry.github.io/assets/img/limeberry_logo.png" />
+  <img src="https://github.com/limeberry/limeberry-framework/blob/master/application/template/img/limeberry.logo.png?raw=true" />
 </p>
 
 ## About
