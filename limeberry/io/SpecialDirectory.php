@@ -72,6 +72,17 @@ namespace limeberry\io
 			return ROOT.DS.$application_folder.DS.'library';
 		}
 
+                /**
+		* Language  directory of Limeberry framework.
+		* @return string
+		*/
+		public static function LanguageFolder()
+		{
+			global $application_folder;
+			return ROOT.DS.$application_folder.DS.'language';
+		}
+
+                
 		/**
 		* Model directory of Limeberry framework.
 		* @return string
