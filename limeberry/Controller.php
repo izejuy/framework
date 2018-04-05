@@ -10,9 +10,9 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry
 {
+    
     use limeberry\View;
         
     /**
@@ -22,11 +22,14 @@ namespace limeberry
     {
         private $current_version="";
 	private $controller_author = "";
+        
+        /**
+         * Initialize
+         */
 	public function __construct()
         {
             $this->View = new View();
         }
-
 
         /**
         * Set version for your controller
@@ -67,7 +70,7 @@ namespace limeberry
 	{
             return $this->controller_author;
 	}
-         
+
         
         /**
         * This function is used to return an array of defined functions of your controller
@@ -86,4 +89,5 @@ namespace limeberry
         }
     }
 }
+
 ?>

@@ -28,7 +28,8 @@ namespace limeberry\tool
             *	@param string  $objPath data you want to map
             *	@return void
             */
-	    public static function MapNew($objName, $objPath){
+	    public static function MapNew($objName, $objPath)
+            {
 	        self::$objList[$objName] = $objPath;
 	    }
 
@@ -38,7 +39,8 @@ namespace limeberry\tool
             *	@param string $objName Name of object
             *	@return mixed type
             */
-	    public static function GetValue($objName){
+	    public static function GetValue($objName)
+            {
 	       return self::$objList[$objName];
 	    }
 	}

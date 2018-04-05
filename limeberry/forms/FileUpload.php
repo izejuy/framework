@@ -19,6 +19,7 @@ namespace limeberry\forms
      */
     class FileUpload
     {
+        
         private $upload_dir;
         private $max_size;
         private $form_name;
@@ -27,6 +28,11 @@ namespace limeberry\forms
         private $uploaded_file_name;
         private $is_onlyimages = false;
         
+        /**
+         * Initialize FileUpload class
+         * @param type $formName
+         * @return $this
+         */
         public function __construct($formName = "Default") 
         {
             $this->upload_dir = $this->setDirectory("uploads");

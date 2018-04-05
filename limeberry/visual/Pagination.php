@@ -10,13 +10,12 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\visual
 {
 	use limeberry\Url as purl;
 
 	/**
-	*		Limeberry pagination helper class
+	*   Limeberry pagination helper class
 	**/
 	class Pagination
 	{
@@ -84,7 +83,7 @@ namespace limeberry\visual
 		*	@param array  $attrb attributes for link tag, array key as tag and value as set data.
 		*	@return void
 		*/
-		public function SetLinkStyle($attrb=null)
+		public function setLinkStyle($attrb=null)
 		{
 			$this->linkStyles = ' ';
 			foreach ($attrb as $key => $value) {
@@ -175,6 +174,7 @@ namespace limeberry\visual
 		}
       
 	}
+        
 }
 
 

@@ -9,16 +9,13 @@
      * @copyright Copyright (C) 2018 Sinan SALIH
      */
 
-
-
-     /*
-      * Entry point of application.
-      */
     require_once 'limeberry/Framework.php';
     use limeberry\Framework;
 	
-    Framework::LoadConfig("app_config.php");
-        
+    //app_config.php is the configuration file for your project.
+    Framework::LoadConfig("app_config.php");   
+    
+    //This line starts your application.
     Framework::Run();
 
 ?>

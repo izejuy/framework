@@ -1,4 +1,5 @@
 <?php
+
 use limeberry\Controller As myController;
 
 
@@ -8,6 +9,7 @@ class indexController extends myController{
     {      
         $this->View->Render("index.php");
     }
+    
 }
 
 ?>

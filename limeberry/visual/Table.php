@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\visual
 {
 	/**
@@ -34,12 +33,13 @@ namespace limeberry\visual
 			if(!isset($attributes))
 			{
 				$this->tableBase="<table>".self::EOL;
-			}else{
-				$this->tableBase ='<table ';
-				foreach ($attributes as $key => $value) {
-					$this->tableBase .= ' '.$key.'="'.$value.'"';
-				}
-				$this->tableBase .= ' >'.self::EOL;
+			}else
+                        {
+                            $this->tableBase ='<table ';
+                            foreach ($attributes as $key => $value) {
+                                    $this->tableBase .= ' '.$key.'="'.$value.'"';
+                            }
+                            $this->tableBase .= ' >'.self::EOL;
 			}
 		}
 

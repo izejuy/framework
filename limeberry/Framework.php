@@ -22,8 +22,16 @@ namespace limeberry
     */
     class Framework 
     {
+        /*
+         * @ignore
+         */
         protected static $areas = "";
         
+        /**
+         * This method is used to load configuration file, must be called with a valid
+         * configuration before Running framework.
+         * @param string $configFile  app_config.php file
+         */
         public static function LoadConfig($configFile='app_config.php')
         {
             $filename = $configFile;
@@ -43,6 +51,11 @@ namespace limeberry
         }
 
     
+        /**
+         * This function is entry point of your application.
+         * Makes configurations check for paths. 
+         * Initialize the application
+         */
 	public static function Run()
 	{
             //get global application path from app_config
@@ -99,6 +112,7 @@ namespace limeberry
             if(file_exists($application_folder.DS.'controller'.DS.$area.$controllerName.'.php'))
             {
                 require_once($application_folder.DS.'controller'.DS.$area.$controllerName.'.php');
+                
                 $controller = new $controllerName;
                 if (isset($tokens[$tk2]) && ($tokens[$tk2] != "")) 
                 {
@@ -107,17 +121,20 @@ namespace limeberry
                     {
                         $controller->{$actionName}($tokens[$tk3]);
                     }
-                    else{ 
+                    else
+                    { 
                         $controller->{$actionName}();
                     }
                 }
-                else{
+                else
+                {
                     //Default entry point (IndexAction), if action not specified
                     $controller->IndexAction();
                 }	
 
             }
-            else{ 
+            else
+            { 
                 //Check if controller defined in url, if not look for Index.php controller and IndexAction by default.
                 if($tokens[$tk1] == "")
                 {
@@ -129,7 +146,8 @@ namespace limeberry
                         $controller->indexAction();
                     }
                 }
-                else{
+                else
+                {
                     //if not found an entry point(also indexController.php & IndexAction ) load a 404 error.
                     require_once($application_folder.DS.'controller'.DS.'ErrorHandling.php');
                     $controllerName = 'ErrorHandling';
@@ -141,7 +159,9 @@ namespace limeberry
 	}
         
       
-                
+        /**
+         * @ignore
+         */
         private static function checkUrlProtection($tokens_array)
         {
             #define globals
@@ -153,11 +173,13 @@ namespace limeberry
             if($application_is_urlsecure)
             {
                 #look for each parameter in url
-                foreach ($tokens_array as $value) { 
+                foreach ($tokens_array as $value) 
+                { 
                     foreach($application_unwanted_params as $unwanted)
                     {
                         #check each url token with each unwanted parameter if contains it.
-                        if(strpos($value, $unwanted) !==false){
+                        if(strpos($value, $unwanted) !==false)
+                        {
                             #force redirect to ErrorHandling Controller  
                             require_once($application_folder.DS.'controller'.DS.'ErrorHandling.php');
                             $controllerName = 'ErrorHandling';
@@ -170,8 +192,7 @@ namespace limeberry
             }           
         }
         
-        
-        
+
         
         /**
          * Version Number of Framework.

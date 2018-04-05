@@ -143,9 +143,6 @@ namespace limeberry
 
 
 
-
-
-
         #-------------------------------------------- [GET METHOS] -----------------------------------
 
         /**
@@ -197,7 +194,8 @@ namespace limeberry
             global $application_name;
             return $application_name;
         }
-                
+        
+        
         /**
         * Version number of your application.
         * @return string

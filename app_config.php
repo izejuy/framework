@@ -39,7 +39,7 @@ Configuration::setApplicationUrl("http://localhost/limeberry");
 *	set this false. 
 **/
 Configuration::setRoot(false);
-#[OPTION 2] // Configuration::setRoot(TRUE);
+// Configuration::setRoot(true); #[OPTION 2]
 
 /**
  *      === [ Application Name ] ===
@@ -68,6 +68,7 @@ Configuration::setDescription("Description of my application");
 *****************************/
 class Application
 {
+    
     public function Register()
     {
         //Application First Run Method, Register your object mappers and other application configurations.

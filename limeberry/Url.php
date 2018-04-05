@@ -10,8 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
-
 namespace limeberry
 {   
     require_once('base.php');
@@ -42,6 +40,7 @@ namespace limeberry
                 return  $application_install_url.'/'.$controllerName.'/'.$action;
 	    }
 	}
+        
         
         /**
          * This function returns a redirectable url from your controllers's actions in an Area.
@@ -83,9 +82,6 @@ namespace limeberry
         }
 
         
-
-
-
         /**
          *	Simple redirect url
          *      For example you can use this with html's < a > tags href attribute  
@@ -112,7 +108,7 @@ namespace limeberry
          * Returns current page url
          * @return String
          **/
-        public static function GetUrl()
+        public static function getUrl()
         {
            return (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         }
@@ -122,7 +118,7 @@ namespace limeberry
          * @param String $paramid name of your entry
          * @return string
          */
-        public static function GetData($paramid = null)
+        public static function getData($paramid = null)
         {
             global $application_query_data;
             if(is_null($paramid))

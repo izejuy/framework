@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\visual
 {
 	/**
@@ -168,8 +167,9 @@ namespace limeberry\visual
 	    *	@param string $printed tag for printing
 	    *	@return string
 	    **/
-	    public function SpecialTag($printed){
-	    	return $printed;
+	    public function SpecialTag($printed)
+            {
+                return $printed;
 	    }
 
 	    /**

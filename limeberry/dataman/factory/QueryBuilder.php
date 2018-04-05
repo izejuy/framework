@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\dataman\factory
 {
     /**
@@ -708,4 +707,6 @@ namespace limeberry\dataman\factory
             $this->prevCommand = "";
         }
     }
+
+    
 }

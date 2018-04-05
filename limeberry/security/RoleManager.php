@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\security
 {
 	use limeberry\security\RoleProvider;
@@ -24,36 +23,37 @@ namespace limeberry\security
 	class RoleManager 
 	{
 
-               /**
-                * If user is Authorized
-                * @return boolean
-                */
-		public static function isAuthorized()
-		{
-			 $roles_provided = RoleProvider::get_provided_roles();
-			 $required_roles = RoleProvider::get_required_roles();
-			foreach ($required_roles as $key => $value) {
-				$auth_man_id[] = $key;
-			}
 
-			 foreach ($roles_provided as $key => $value) {
-			 	if(in_array($key, $auth_man_id))
-			 	{
-			 		return true;
-			 	}else{
-			 		return false;
-			 	}
-			 }
-		}
+            /**
+             * If user is Authorized
+             * @return boolean
+             */
+             public static function isAuthorized()
+             {
+                      $roles_provided = RoleProvider::get_provided_roles();
+                      $required_roles = RoleProvider::get_required_roles();
+                     foreach ($required_roles as $key => $value) {
+                             $auth_man_id[] = $key;
+                     }
 
-                /**
-                 * Clear required roles.
-                 */
-		public static function ClearRequired()
-		{
-			roleprovider::RequiredRoles(null);
-		}
-    
+                      foreach ($roles_provided as $key => $value) {
+                             if(in_array($key, $auth_man_id))
+                             {
+                                     return true;
+                             }else{
+                                     return false;
+                             }
+                      }
+             }
+
+             /**
+              * Clear required roles.
+              */
+             public static function ClearRequired()
+             {
+                     roleprovider::RequiredRoles(null);
+             }
+
 	}
 }
 

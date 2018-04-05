@@ -12,6 +12,7 @@
 **/
 namespace limeberry
 {
+    
     /**
      * This class is used to simply manage routes of your application.
      * All functions of this class must be used in Application Register Function
@@ -41,8 +42,9 @@ namespace limeberry
             if(!is_null($mapname))
             {
                 return $application_static_routes[$mapname];
-            }else
-                {return $application_static_routes;}
+            }else{
+                return $application_static_routes;
+            }   
 	}
 
         
@@ -70,7 +72,7 @@ namespace limeberry
                     exit();
 		}
             }
-			
+            
 	}
                 
         /**
@@ -99,6 +101,7 @@ namespace limeberry
 	}
                 
     }
+    
 }
 
 ?>

@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\dataman
 {
 	use PDO;
@@ -50,21 +49,21 @@ namespace limeberry\dataman
 		function __construct($constring,$user, $pass, $options=null)
 		{
 			
-			if($options==null)
-			{
-				$options=array(
-				PDO::ATTR_PERSISTENT    => true,
-	            PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
-	        	);
-			}
-			try{
-				$this->connection = new PDO($constring, $user, $pass, $options);
-				$this->is_connected = true;
-			}catch(PDOException $ex){
-				$this->is_connected = false;
-	        	$this->errors = $ex->getMessage();
-	        }
-	        return $this;
+                    if($options==null)
+                    {
+                        $options=array(
+                        PDO::ATTR_PERSISTENT    => true,
+                        PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
+                                    );
+                    }
+                    try{
+                        $this->connection = new PDO($constring, $user, $pass, $options);
+                        $this->is_connected = true;
+                    }catch(PDOException $ex){
+                        $this->is_connected = false;
+                        $this->errors = $ex->getMessage();
+                    }
+                    return $this;
 	        
 		}
 
@@ -73,7 +72,7 @@ namespace limeberry\dataman
 		* @return database connection
 		*/
 		public function Source(){
-			return $this->connection;
+                    return $this->connection;
 		}
 
 		/**
@@ -82,13 +81,13 @@ namespace limeberry\dataman
 		*/
 		public function isConnected()
 		{
-			if($this->is_connected)
-			{
-				return true;
-			}
-			else{
-				return false;
-			}
+                    if($this->is_connected)
+                    {
+                            return true;
+                    }
+                    else{
+                            return false;
+                    }
 		}
 
 		/**
@@ -102,21 +101,22 @@ namespace limeberry\dataman
 		public function Connection($constring,$user, $pass,$options=null)
 		{
 			
-			if($options==null)
-			{
-				$options=array(
-				PDO::ATTR_PERSISTENT    => true,
-	            PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
-	        	);
-			}
-			try{
-				$this->connection = new PDO($constring, $user, $pass, $options);
-				$this->is_connected = true;
-			}catch(PDOException $ex){
-				$this->is_connected = false;
-	        	$this->errors = $ex->getMessage();
-	        }
-	        return $this->connection;
+                    if($options==null)
+                    {
+                        $options=array(
+                        PDO::ATTR_PERSISTENT    => true,
+                        PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
+                     );
+                    }
+                    try
+                    {
+                        $this->connection = new PDO($constring, $user, $pass, $options);
+                        $this->is_connected = true;
+                    }catch(PDOException $ex){
+                        $this->is_connected = false;
+                        $this->errors = $ex->getMessage();
+                    }
+                    return $this->connection;
 		}
 
 
@@ -126,7 +126,7 @@ namespace limeberry\dataman
 		*/
 		public function lastError()
 		{
-			return $this->error;
+                    return $this->error;
 		}
 
 
@@ -134,15 +134,16 @@ namespace limeberry\dataman
 		*	Close a connection
 		*	@return bool
 		*/
-		public function Close(){
-			try{
-				$this->connection=null;
-				$this->is_connected=false;
-				return true;
-			}catch(Exception $ex)
-			{
-				return false;
-			}
+		public function Close()
+                {
+                    try{
+                        $this->connection=null;
+                        $this->is_connected=false;
+                        return true;
+                    }catch(Exception $ex)
+                    {
+                        return false;
+                    }
 		}
 	}
 }

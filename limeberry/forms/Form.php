@@ -16,15 +16,24 @@ namespace limeberry\forms
     use limeberry\io\SpecialDirectory as SpecialDirs;
     use limeberry\Model;
     
+    /**
+     * Limeberry Form Class
+     * This class is used to help the developer while creating forms
+     * and sending data to models.
+     */
     Class Form
     {   
         const EOL = "\n"; 
-
+        
         protected $baseForm;
         protected $formElements;
         protected $modelInstance;
         protected $formName;
-                
+             
+        /**
+         * Initialize a form class
+         * @param type $formName A form name to provide security while Seding form.
+         */
         function __construct($formName = "defaultForm") 
         {
             $this->baseForm = "";   
@@ -33,6 +42,11 @@ namespace limeberry\forms
             $this->formName = $formName;
         }
 
+        /**
+         * This function creates a form.
+         * @param type $attr Array of html attributes of form
+         * @return string
+         */
         public function DefineForm($attr=null)
         {
             
@@ -52,6 +66,10 @@ namespace limeberry\forms
             return $creator;
         }
         
+        /**
+         * This function is used to set model files for forms when sendng data
+         * @param type $modelClass Model class name to use with form
+         */
         public function setModel($modelClass)
         {
             if(!is_null($modelClass))
@@ -60,6 +78,11 @@ namespace limeberry\forms
             }
         }
         
+        /**
+         * This function is used to created form elements
+         * @param type $element FormElements class methods
+         * @return string
+         */
         public function setElement($element)
         {
             $creator = "";
@@ -67,12 +90,22 @@ namespace limeberry\forms
             return $creator;
         }
 
+        
+        /**
+         * Close form tags
+         * @return string
+         */
         public function FinishForm()
         {
             $creator = "</form>".self::EOL;       
              return $creator;
         }
         
+        /**
+         * This function is used to run a function/action model file after 
+         * POSTing the form.
+         * @param type $actionName Action in model file to run
+         */
         public function Call($actionName)
         {
             if($this->__desidePostedForm($this->formName))
@@ -93,6 +126,10 @@ namespace limeberry\forms
             }
             
         }
+        
+        /**
+         * @ignore
+         */
         private function __desidePostedForm($frmName="")
         {
             if(isset($_POST[$frmName]))

@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry\tool
 {
 	/**
@@ -184,8 +183,7 @@ namespace limeberry\tool
 		{
                     session_destroy();
 		}
-                
-     
+
 	}
 
 }

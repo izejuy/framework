@@ -10,7 +10,6 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-
 namespace limeberry
 {
     include_once('base.php');
@@ -76,7 +75,7 @@ namespace limeberry
 	/**
 	* @var $layoutPathParam Name of your template file [example: setLayout("mytemplate.phtml"); ]
 	*/
-	public function SetLayout($layoutPathParam="master.php")
+	public function setLayout($layoutPathParam="master.php")
 	{
             if(file_exists($this->MASTER.$this->layoutPath.$layoutPathParam))
             {
@@ -86,12 +85,13 @@ namespace limeberry
             }
         }
 		
+        
 	/**
 	* Set content for parameter defined in template page.
 	* @var $paramName Name of your parameter in template ex: {@Title};
 	* @var $paramName Content for your parameter.
 	*/
-	public function SetParameter($paramName, $paramValue) 
+	public function setParameter($paramName, $paramValue) 
 	{
             $this->values[$paramName] = $paramValue;
 	}
@@ -101,7 +101,7 @@ namespace limeberry
         * Set null value to unused parameter in template files
         * @param type $paramName
         */
-        public function SetParameterNull($paramName) 
+        public function setParameterNull($paramName) 
 	{
             $this->values[$paramName] = "";
 	}
@@ -121,7 +121,7 @@ namespace limeberry
 	/**
 	* if you do not use parameters for setting title you can use this function.
         */
-        public function SetTitle($paramTitle='')
+        public function setTitle($paramTitle='')
         {
             $this->title = $paramTitle;
 	}
@@ -138,6 +138,7 @@ namespace limeberry
             return rPath.$fileName;
 	}
 
+        
         /**
         * Start content definition in your view files when using templates.
         */
@@ -145,7 +146,8 @@ namespace limeberry
         {
             ob_start();
         }
-                
+          
+        
         /**
         * Finish content definition in your view files when using templates.
         */
@@ -155,8 +157,7 @@ namespace limeberry
             $this->CreateView();
 	}
 
-      
-        
+
         /*
         * Returns the page to screen.
 	*/
