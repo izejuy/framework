@@ -16,7 +16,7 @@ namespace limeberry\helpers
     define('REVERSE_VERTICAL', "v");
     
     /**
-     * This is a helper class for arrays. It's adds various features for arrays
+     * This is a helper class for arrays. It's adds various features to arrays
      */
     class Arrays
     {
