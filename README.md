@@ -7,7 +7,7 @@ Welcome to Limeberry Framework. Limeberry is an excellent but straightforward ap
    - [Easy Project And Environment Configuration](https://limeberry.github.io/docs/configuration.html)
    - Simple [Project Structure](https://limeberry.github.io/docs/structure.html)
    - [Template Engine & Master Pages](https://limeberry.github.io/docs/masterpage.html) eliminates the need to write the same html code        for each repetitive design every time
-   - Generate Queries with a powerful [Query Builder]() class or simply run CRUD commands with [AutoPulse](https://limeberry.github.io/docs/autopulse.html) library
+   - Generate Queries with a powerful [Query Builder](https://limeberry.github.io/docs/querybuilder.html) class or simply run CRUD commands with [AutoPulse](https://limeberry.github.io/docs/autopulse.html) library
    - [Create areas](https://limeberry.github.io/docs/areas.html) to divide big projects.
 
 Check for all available features of the framework in [user guide](https://limeberry.github.io/docs/index.html)
