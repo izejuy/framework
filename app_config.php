@@ -69,9 +69,13 @@ Configuration::setDescription("Description of my application");
 class Application
 {
     
+    /**
+     * This method is called when your application is loaded. You can register
+     * your object mappers or do other configurations.
+     */
     public function Register()
     {
-        //Application First Run Method, Register your object mappers and other application configurations.
+        
     }
 }
 ?>

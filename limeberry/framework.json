@@ -1,0 +1,18 @@
+{
+    "title": "Limeberry Framework",
+    "version": "1.0.0",
+    "update": "2018 April",
+    "description": "A brand new PHP MVC framework for fast and easy application development.",
+    "url": "https://limeberry.github.io",
+    "code": "https://github.com/limeberry",
+    "licence":
+        {
+            "title": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+    "author": {
+        "name": "Sinan SALIH",
+        "email": "limeberry.framework@gmail.com",
+        "profile": "https://tr.linkedin.com/in/sinan-sali-chasan"
+    }
+}
