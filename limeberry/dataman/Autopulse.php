@@ -34,7 +34,8 @@ namespace limeberry\dataman
             try 
             {
                 //create command
-                $cmdTable = get_class($modelForm);
+                $cmdTable = self::nameOptimizer(get_class($modelForm));
+                
                 $command = 'insert into '.$cmdTable.'(';
                 foreach ($modelForm as $key => $value) {
                         $command .= $key.',';
@@ -98,31 +99,24 @@ namespace limeberry\dataman
 
         /**
         *	Update a data using model form and array
-        *	@param Mixed $modelForm Model Class variable
+        *	@param Mixed $tableName Model Class variable
         *	@param Array $fieldList Fields to be updated, array key as sql table column name and value as data to be updated.
         *	@param String $whereOption Set where options to sql query. ex: "id > 5"
         * 	@param Mixed $dbclassinstance Source provided by MysqlConnect class
         *	@return bool
         */
-        public static function Update(&$modelForm, $fieldList=null, $whereOption=null , $dbclassinstance)
+        public static function Update($tableName, $fieldList=null, $whereOption=null , $dbclassinstance)
         {
             try
             {
                     //get table name from model
-                    $table = get_class($modelForm);
+                    $table = self::nameOptimizer($tableName);
                     //command builder;
                     $command='update '.$table.' set ';
                     if($fieldList != null)
                     {
-                            foreach ($modelForm as $key => $value) {
-                                    if(in_array($key, $fieldList))
-                                    {
-                                            $command .= ' '.$key.'=:'.$key.',';
-                                    }
-                            }
-                    }else{
-                            foreach ($modelForm as $key => $value) {
-                                    $command .= ' '.$key.'=:'.$key.',';
+                            foreach ($fieldList as $key => $value) {
+                                $command .= ' '.$key.'=:'.$key.',';
                             }
                     }
                     $command = rtrim($command, ',');
@@ -137,18 +131,9 @@ namespace limeberry\dataman
             #define query in database
             if($fieldList !=null)
             {
-                    foreach ($modelForm as $key => $value) {
-                            if(in_array($key, $fieldList))
-                            {
-                                    $m_cmd->SetParameter(':'.$key, $value);
-                            }
+                    foreach ($fieldList as $key => $value) {
+                        $m_cmd->SetParameter(':'.$key, $value);
                     }
-            }
-            else{
-                    foreach ($modelForm as $key => $value) {
-                            $m_cmd->SetParameter(':'.$key, $value);
-                    }
-                    return true;
             }
             $m_cmd->Execute();
             }catch(Exception $ex)
@@ -157,20 +142,23 @@ namespace limeberry\dataman
                     return false;
             }
         }
+        
+        
+        
 
         /**
-        *	Delete data from database
+        *	Delete data from database using Model
         *	@param Mixed $modelForm Model Class
+        *      @param Mixed $dbclassinstance Source provided by MysqlConnect class
         *	@param String $whereOption Set where options to sql query. ex: "id > 5"
-        *       @param Mixed $dbclassinstance Source provided by MysqlConnect class
         *	@return bool
         */
-        public static function Delete(&$modelForm, $whereOption=null, $dbclassinstance)
+        public static function DeleteWithModel(&$modelForm,$dbclassinstance ,$whereOption=null)
         {
             try
             {
                     //get table name from model
-                    $table = get_class($modelForm);
+                    $table = self::nameOptimizer(get_class($modelForm));
                     //command builder;
                     $command='delete from '.$table.' ';
                     if($whereOption !=null )
@@ -186,6 +174,56 @@ namespace limeberry\dataman
                     return $ex->getMessage();
                     return false;
             }
+        }
+        
+        
+        
+        
+        
+        /**
+        *	Delete data from database using Table Name
+        *	@param Mixed $tableName Model Class
+        *       @param Mixed $dbclassinstance Source provided by MysqlConnect class
+        *	@param String $whereOption Set where options to sql query. ex: "id > 5"
+        *	@return bool
+        */
+        public static function Delete($tableName,$dbclassinstance ,$whereOption=null)
+        {
+            try
+            {
+                    //get table name from model
+                    $table = self::nameOptimizer($tableName);
+                    //command builder;
+                    $command='delete from '.$table.' ';
+                    if($whereOption !=null )
+                    {
+                            $command.='where '.$whereOption;
+                    }
+                    //parameter binder;
+                    #define database
+                    $m_cmd = new DbCommand($command, $dbclassinstance);
+                    $m_cmd->Execute();
+                    return true;
+            }catch(Exception $ex){
+                    return $ex->getMessage();
+                    return false;
+            }
+        }
+        
+        
+        
+        
+        /**
+         * @ignore
+         */
+        private static function nameOptimizer($tableName)
+        {
+            $name = $tableName;
+            if(strpos($tableName, "Model"))
+            {
+                $name = str_replace("Model", "", $name);
+            }
+            return $name;
         }
     }
 }
