@@ -12,19 +12,53 @@
 **/
 
 require_once 'base.php';
-    spl_autoload_register("loadframework");
-        
-    /**
-    * Loads core framework modules, libraries, classes.
-    * @ignore
-    */
-    function loadframework($class)
-    {
-        //namespace to path converter
-        $class = ROOT.DS.str_replace("\\", "/", $class).'.php';
-        if(file_exists($class))
-        {
-            require_once($class);
+
+/** 
+ * PSR-4 Auto-loading.
+ * @link <https://www.php-fig.org/psr/psr-4/>.
+ */
+spl_autoload_register(function ($class) {
+
+    // Project namespaces to match.
+    $prefixes = [
+        "limeberry\\dataman\\",
+        "limeberry\\forms\\",
+        "limeberry\\helpers\\",
+        "limeberry\\io\\",
+        "limeberry\\security\\",
+        "limeberry\\tool\\",
+        "limeberry\\visual\\"
+    ];
+
+    // Base directory for the namespace prefix.
+    $baseDir = ROOT . DS;
+    
+    foreach ($prefixes as $prefix) {
+        // Does the class use the namespace prefix?
+        $len = strlen($prefix);
+        if (strncmp($prefix, $class, $len) !== 0) {
+            continue;
+        }
+    
+        // Fetch the relative class name.
+        $relativeClass = substr($class, $len);
+    
+        // replace the namespace prefix with the base directory, replace namespace
+        // separators with directory separators in the relative class name, append
+        // with .php
+        $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
+    
+        // If the file exists, require it.
+        if (file_exists($file)) {
+            require $file;
         }
     }
+
+    $file = $baseDir . str_replace("\\", "/", $class) . '.php';
+
+    // If the file exists, require it.
+    if (file_exists($file)) {
+        require $file;
+    }
+});
 ?>
