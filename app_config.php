@@ -45,7 +45,7 @@ Configuration::setRoot(false);
  *      === [ Application Name ] ===
  *      This configuration is used to set name of your application.
  */
-Configuration::setTitle("Empty Limeberry Application");
+Configuration::setTitle("EmptyApp");
 
 /**
  *      === [ Application Version ] ===
@@ -57,7 +57,7 @@ Configuration::setVersion("1.0.0");
  *      === [ Application Description ] ===
  *      This configuration is used to set description of your application.
  */
-Configuration::setDescription("Description of my application");
+Configuration::setDescription("AppDescription");
 
 //Configuration::setUrlProtected(TRUE);
 //Configuration::UnwantedParameters(array("'", "-"));
