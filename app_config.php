@@ -30,7 +30,7 @@ Configuration::setApplicationFolder("application");
 *	 "http://www.examplesite.com/my_module". 
 **/
 Configuration::setApplicationUrl("http://localhost/limeberry");
-#[OPTION 2] //Configuration::setApplicationUrl("http://www.examplesite.com/");
+
 
 
 /**
@@ -39,7 +39,7 @@ Configuration::setApplicationUrl("http://localhost/limeberry");
 *	set this false. 
 **/
 Configuration::setRoot(false);
-// Configuration::setRoot(true); #[OPTION 2]
+
 
 /**
  *      === [ Application Name ] ===
