@@ -20,7 +20,7 @@ require_once 'base.php';
 spl_autoload_register(function ($class) {
 
     // Project namespaces to match.
-    $prefixes = [
+    $prefixes = array(
         "limeberry\\dataman\\",
         "limeberry\\forms\\",
         "limeberry\\helpers\\",
@@ -28,7 +28,7 @@ spl_autoload_register(function ($class) {
         "limeberry\\security\\",
         "limeberry\\tool\\",
         "limeberry\\visual\\"
-    ];
+    );
 
     // Base directory for the namespace prefix.
     $baseDir = ROOT . DS;
