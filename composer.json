@@ -22,5 +22,9 @@
         "docs": "https://limeberry.github.io/docs/index.html",
         "issues": "https://github.com/limeberry/framework/issues"
 
+    },
+
+    "autoload": {
+        "psr-0": { "limeberry\\": "" }
     }
 }
