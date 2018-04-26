@@ -23,8 +23,6 @@
         "issues": "https://github.com/limeberry/framework/issues"
 
     },
-
-    "autoload": {
-        "psr-4": { "limeberry": "limeberry/" }
-    }
+    "type": "project",
+    "minimum-stability": "stable"
 }
