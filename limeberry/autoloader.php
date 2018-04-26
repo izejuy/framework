@@ -1,15 +1,13 @@
 <?php
-
 /**
-*   Limeberry Framework
-*   
-*   a php framework for fast web development.
-*   
-*   @package Limeberry Framework
-*   @author Sinan SALIH
-*   @copyright Copyright (C) 2018 Sinan SALIH
-*   
-**/
+ * Limeberry Framework
+ *   
+ * A php framework for fast web development.
+ *   
+ * @package Limeberry Framework
+ * @author Sinan SALIH
+ * @copyright Copyright (C) 2018 Sinan SALIH
+ */
 
 require_once 'base.php';
 
@@ -17,10 +15,9 @@ require_once 'base.php';
  * PSR-4 Auto-loading.
  * @link <https://www.php-fig.org/psr/psr-4/>.
  */
-spl_autoload_register(function ($class) {
-
-    // Project namespaces to match.
-    $prefixes = [
+spl_autoload_register(function ($class)
+{
+    $prefixes = array(
         "limeberry\\dataman\\",
         "limeberry\\forms\\",
         "limeberry\\helpers\\",
@@ -28,35 +25,24 @@ spl_autoload_register(function ($class) {
         "limeberry\\security\\",
         "limeberry\\tool\\",
         "limeberry\\visual\\"
-    ];
-
-    // Base directory for the namespace prefix.
+    );
     $baseDir = ROOT . DS;
-    
-    foreach ($prefixes as $prefix) {
-        // Does the class use the namespace prefix?
+    $baseDir = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $baseDir);
+    foreach ($prefixes as $prefix)
+    {
         $len = strlen($prefix);
-        if (strncmp($prefix, $class, $len) !== 0) {
+        if (strncmp($prefix, $class, $len) !== 0)
+        {
             continue;
         }
-    
-        // Fetch the relative class name.
         $relativeClass = substr($class, $len);
-    
-        // replace the namespace prefix with the base directory, replace namespace
-        // separators with directory separators in the relative class name, append
-        // with .php
-        $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
-    
-        // If the file exists, require it.
-        if (file_exists($file)) {
+        $file = $baseDir . DIRECTORY_SEPARATOR . str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $relativeClass) . '.php';
+        if (file_exists($file))
+        {
             require $file;
         }
     }
-
-    $file = $baseDir . str_replace("\\", "/", $class) . '.php';
-
-    // If the file exists, require it.
+    $file = $baseDir . str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $class) . '.php';
     if (file_exists($file)) {
         require $file;
     }
