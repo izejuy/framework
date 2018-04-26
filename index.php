@@ -1,5 +1,8 @@
 <?php
-	
+namespace limeberry
+{
+    
+
     /**
      *  Limeberry | PHP MVC Framework
      *  a new php mvc framework for fast and secure web applications. 
@@ -17,5 +20,5 @@
     
     //This line starts your application.
     Framework::Run();
-
+}
 ?>

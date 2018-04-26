@@ -25,6 +25,6 @@
     },
 
     "autoload": {
-        "psr-0": { "limeberry\\": "" }
+        "psr-4": { "limeberry": "limeberry/" }
     }
 }
