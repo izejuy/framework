@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/limeberry/framework/blob/master/application/template/img/limeberry.logo.png?raw=true" width="242" />
+  <img src="https://raw.githubusercontent.com/limeberry/limeberry.github.io/master/assets/img/limeberry_logo.png" width="154" />
 </p>
 
 ## About Limeberry Framework
@@ -22,12 +22,16 @@ In simple words; it is for you...
 
 
 ## Download
-- [Download Limeberry Framework v1.0](https://limeberry.github.io/download/limeberry-1_0.zip)
+- [Download Limeberry Framework v1.2](https://limeberry.github.io/download/limeberry-1_2.zip)
+
+or
+
+composer create-project limeberry/framework
 
 ## Learning Limeberry Framework
 We tried to explain the definitions and usage of the framework in a simple user manual. You can start learning Limeberry from the user manual. We are working harder to create slideshow tutorials and some educational material for the framework. We will begin publishing new tutorials as soon as possible.
-- [Limeberry Framework v1.0 User Manual](https://limeberry.github.io/docs/index.html)
-- [All Namespaces of Limeberry (Documentation v1.0)](https://limeberry.github.io/namespace/index.html)
+- [Limeberry Framework v1.x User Manual](https://limeberry.github.io/docs/index.html)
+- [All Namespaces of Limeberry (Documentation v1.2)](https://limeberry.github.io/namespace/index.html)
 
 
 
