@@ -1,0 +1,32 @@
+{
+    "name": "limeberry/framework",
+    "description": "A brand new PHP Framework for fast and easy application development.",
+    "keywords": ["limeberry", "php", "mvc", "framework"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sinan SALIH",
+            "email": "snnslh@outlook.com",
+            "homepage": "https://limeberry.github.io",
+            "role": "Developer"
+            
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "limeberry/framework": ">=1.0"
+
+    },
+    "support": {
+        "email": "limeberry.framework@gmail.com",
+        "docs": "https://limeberry.github.io/docs/index.html",
+        "issues": "https://github.com/limeberry/framework/issues"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "limeberry\\": ""
+        }
+    }
+
+}
