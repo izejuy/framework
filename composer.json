@@ -13,9 +13,7 @@
         }
     ],
     "require": {
-        "php": ">=5.6",
-        "limeberry/framework": ">=1.0"
-
+        "php": ">=5.6"
     },
     "support": {
         "email": "limeberry.framework@gmail.com",
