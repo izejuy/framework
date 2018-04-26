@@ -24,5 +24,6 @@
 
     },
     "type": "project",
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
