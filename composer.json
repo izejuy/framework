@@ -1,6 +1,6 @@
 {
     "name": "limeberry/framework",
-    "description": "A brand new PHP Framework for fast and easy application development.",
+    "description": "Source files of limeberry php framework. Used for developer builds or source code improvement.",
     "type": "project",
     "keywords": [
         "limeberry",
