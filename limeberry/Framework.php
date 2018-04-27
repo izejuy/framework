@@ -12,8 +12,6 @@
 **/
 namespace limeberry
 {
-    require_once 'limeberry/autoloader.php';
-    require_once 'limeberry/base.php';
     use limeberry\Url as purl;
     
     /**

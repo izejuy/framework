@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/limeberry/framework.svg?branch=master)](https://travis-ci.org/limeberry/framework)
+-------
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/limeberry/limeberry.github.io/master/assets/img/limeberry_logo.png" width="154" />
 </p>
