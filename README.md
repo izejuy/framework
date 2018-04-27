@@ -2,7 +2,7 @@
 -------
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/limeberry/framework/master/application/template/img/limeberry.logo_binary.png" width="154" />
+  <img src="https://raw.githubusercontent.com/limeberry/framework/master/application/template/img/limeberry.logo_binary.png" width="256" />
 </p>
 
 ## About Limeberry Framework
