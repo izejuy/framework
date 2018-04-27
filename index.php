@@ -1,6 +1,4 @@
 <?php
-require 'vendor/autoload.php';
-
 namespace limeberry
 {
     
@@ -14,7 +12,7 @@ namespace limeberry
      * @copyright Copyright (C) 2018 Sinan SALIH
      */
 
-    
+    require_once 'limeberry/Framework.php';
     use limeberry\Framework;
 	
     //app_config.php is the configuration file for your project.

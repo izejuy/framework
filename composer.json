@@ -24,34 +24,12 @@
     "require": {
         "php": ">=5.6"
     },
-    "autoload": {
-        "files": [
-            "./limeberry/base.php"
-        ],
-        "psr-4": {
-            "limeberry\\dataman\\": "./limeberry",
-            "limeberry\\forms\\": "./limeberry/forms",
-            "limeberry\\helpers\\": "./limeberry/helpers",
-            "limeberry\\io\\": "./limeberry/io",
-            "limeberry\\security\\": "./limeberry/security",
-            "limeberry\\tool\\": "./limeberry/tool",
-            "limeberry\\visual\\": "./limberry/visual"
-        },
-        "classmap": [
-            "./limeberry"
-        ]
-    },
     "support": {
         "email": "limeberry.framework@gmail.com",
         "docs": "https://limeberry.github.io/docs/index.html"
     },
     "require-dev": {
         "phpunit/phpunit": "^5|^6|^7"
-    },
-    "config": {
-        "preferred-install": "dist",
-        "optimize-autoloader": true,
-        "sort-packages": true
     },
     "prefer-stable": true
 }

@@ -12,6 +12,8 @@
 **/
 namespace limeberry
 {
+    require_once 'limeberry/autoloader.php';
+    require_once 'limeberry/base.php';
     use limeberry\Url as purl;
     
     /**
@@ -198,7 +200,7 @@ namespace limeberry
          */
         public static function Version()
         {
-            return "1.1";
+            return "1.x";
         }
     }
 }

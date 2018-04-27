@@ -9,7 +9,6 @@ class indexController extends myController{
     {      
         $this->View->Render("index.php");
     }
-    
 }
 
 ?>
