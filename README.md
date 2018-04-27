@@ -21,7 +21,7 @@ Check for all available features of the framework in [user guide](https://limebe
 In simple words; it is for you...
   - It is lightweight.
   - It is free to use.
-  - It is free(also easy) to extend or develop as your personal needs.
+  - It is free also <b>easy</b> to extend or develop as your personal needs.
   - Limeberry uses mvc architecture.
   - An easy to use template engine.
 
