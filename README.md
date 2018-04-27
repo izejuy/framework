@@ -6,6 +6,8 @@
 </p>
 
 ## About Limeberry Framework
+> This repository contains all source codes of limeberry framework. If you want to create a project using limeberry framework use the limeberry repository.
+
 Welcome to Limeberry Framework. Limeberry is an excellent but straightforward application development framework. Limeberry aims to help you in your coding process by speeding up development with ready to use libraries that require minimal configuration. The structure was developed based on the MVC architectural design. You can check out some key featues of the framework;
    - [Easy Project And Environment Configuration](https://limeberry.github.io/docs/configuration.html)
    - Simple [Project Structure](https://limeberry.github.io/docs/structure.html)
@@ -25,11 +27,8 @@ In simple words; it is for you...
 
 
 ## Download
-- [Download Limeberry Framework v1.2](https://limeberry.github.io/download/limeberry-1_2.zip)
-
-or
-
 > composer create-project limeberry/framework
+- Or clone this repository if you want to improve source code of limeberry framework
 
 ## Learning Limeberry Framework
 We tried to explain the definitions and usage of the framework in a simple user manual. You can start learning Limeberry from the user manual. We are working harder to create slideshow tutorials and some educational material for the framework. We will begin publishing new tutorials as soon as possible.
