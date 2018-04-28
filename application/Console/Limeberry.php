@@ -27,19 +27,32 @@ define("APP", dirname(dirname(__FILE__)));
 
 
 
-switch (Core::ClearArg($argv[1])){
+switch (Core::clearArg($argv[1])){
     case "create:controller" :
         {
             require_once $core.DS.'Create.php';
-            Create::Controller(APP.DS."controller".DS ,$argv[2]);
+            Create::Controller(APP.DS."controller".DS ,Core::checkArg($argv[2]));
+            break;
+        }
+    case "create:area" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::Area(APP.DS."controller".DS ,Core::checkArg($argv[2]));
             break;
         }
     case "create:model" :
         {
             require_once $core.DS.'Create.php';
-            Create::Model(APP.DS."model".DS ,$argv[2]);
+            Create::Model(APP.DS."model".DS ,Core::checkArg($argv[2]));
             break;
         }
+    case "create:template" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::Template(APP.DS."template".DS ,Core::checkArg($argv[2]));
+            break;
+        }
+   
     default:
         echo "Limeberry PHP Framework \n\n [!] Command not found. Please run 'get:help' for help.\n\n";
         break;
