@@ -17,6 +17,11 @@ define("INSTANCES", dirname(__FILE__). DIRECTORY_SEPARATOR. "instance".DIRECTORY
 class Create
 {
     
+    /**
+     * This method creates a new controller for your application.
+     * @param string $path Controller path for limeberry app
+     * @param string $fname New Controller file name for limeberry app
+     */
     public static function Controller($path, $fname)
     {
         try{
@@ -29,7 +34,28 @@ class Create
             
         }catch (Exception $e)
         {
-            echo "\n [!] Error while creating new item in project.Error message: \n{$e->getMessage()}";
+            echo "\n [!] Error while creating new item in project. Error message: \n{$e->getMessage()}";
+        }
+    }
+    
+    /**
+     * This method creates a new model for your application.
+     * @param string $path Controller path for limeberry app
+     * @param string $fname New Controller file name for limeberry app
+     */
+    public static function Model($path, $fname)
+    {
+        try{
+            $ins = file_get_contents(INSTANCES."model.instance");
+            
+            $ins = str_replace("@rn", $fname."Model", $ins);
+            file_put_contents($path. $fname."Model.php", $ins);
+            
+            echo "\n [+] Your new model called {$fname}Model.php created in model path\n\n";
+            
+        }catch (Exception $e)
+        {
+            echo "\n [!] Error while creating new item in project. Error message: \n{$e->getMessage()}";
         }
     }
   

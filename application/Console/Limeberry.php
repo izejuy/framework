@@ -34,6 +34,12 @@ switch (Core::ClearArg($argv[1])){
             Create::Controller(APP.DS."controller".DS ,$argv[2]);
             break;
         }
+    case "create:model" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::Model(APP.DS."model".DS ,$argv[2]);
+            break;
+        }
     default:
         echo "Limeberry PHP Framework \n\n [!] Command not found. Please run 'get:help' for help.\n\n";
         break;
