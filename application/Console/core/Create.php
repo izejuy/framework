@@ -75,7 +75,7 @@ class Create
     /**
      * This method creates a new area for your controllers.
      * @param string $path path for limeberry app
-     * @param string $fname New Controller file name for limeberry app
+     * @param string $fname New file name
      */
     public static function Area($path, $fname)
     {
@@ -110,4 +110,82 @@ class Create
         }
     }
     
+    
+    
+    /**
+     * This method creates a new view for your application.
+     * @param string $path path for limeberry app
+     * @param string $fname New file name 
+     */
+    public static function View($path, $fname)
+    {
+        try{
+            $ins = file_get_contents(INSTANCES."view.instance");
+            //$ins = str_replace("@rn", $fname."Controller", $ins);
+            if(!(empty($fname)))
+            {
+                if (strpos($fname, ':') !== false) {
+                    $fname = explode(':', $fname);
+                    
+                    file_put_contents($path.$fname[0].DIRECTORY_SEPARATOR. $fname[1].".php", $ins);
+                    echo "\n [+] Your new view called {$fname[1]}.php created in folder view\{$fname[0]}\n\n";
+                }else{
+                    file_put_contents($path. $fname.".php", $ins);
+                    echo "\n [+] Your new view called {$fname}.php created in View path\n\n";
+                }
+            }
+            
+        }catch (Exception $e)
+        {
+            echo "\n [!] Error while creating new item in project. Error message: \n{$e->getMessage()}";
+        }
+    }
+ 
+    
+    
+    /**
+     * This method creates a new view area for your application.
+     * @param string $path path for limeberry app
+     * @param string $fname New file name
+     */
+    public static function ViewArea($path, $fname)
+    {
+        if (!file_exists($path.$fname)) {
+            mkdir($path.$fname, 0777, true);
+            echo "\n [+] Your new view area called {$fname} created in views\n\n";
+        }else{
+            echo "\n [!] Area {$fname} already exists in views\n\n";
+        }
+    }
+    
+    
+    
+    /**
+     * This method creates a new view for your application using layout.
+     * @param string $path path for limeberry app
+     * @param string $fname New file
+     */
+    public static function ViewLayout($path, $fname, $layoutname)
+    {
+        try{
+            $ins = file_get_contents(INSTANCES."viewfromlayout.instance");
+            $ins = str_replace("@rn", $layoutname, $ins);
+            if(!(empty($fname)))
+            {
+                if (strpos($fname, ':') !== false) {
+                    $fname = explode(':', $fname);
+                    
+                    file_put_contents($path.$fname[0].DIRECTORY_SEPARATOR. $fname[1].".php", $ins);
+                    echo "\n [+] Your new view called {$fname[1]}.php created in folder view\ {$fname[0]} with layout {$layoutname} \n\n";
+                }else{
+                    file_put_contents($path. $fname.".php", $ins);
+                    echo "\n [+] Your new view called {$fname}.php created in View path with layout {$layoutname} \n\n";
+                }
+            }
+            
+        }catch (Exception $e)
+        {
+            echo "\n [!] Error while creating new item in project. Error message: \n{$e->getMessage()}";
+        }
+    }
 }

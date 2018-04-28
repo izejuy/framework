@@ -52,6 +52,24 @@ switch (Core::clearArg($argv[1])){
             Create::Template(APP.DS."template".DS ,Core::checkArg($argv[2]));
             break;
         }
+    case "create:view" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::View(APP.DS."view".DS ,Core::checkArg($argv[2]));
+            break;
+        }
+    case "create:viewarea" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::ViewArea(APP.DS."view".DS ,Core::checkArg($argv[2]));
+            break;
+        }
+    case "create:viewlayout" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::ViewLayout(APP.DS."view".DS ,Core::checkArg($argv[2]),Core::checkArg($argv[3]));
+            break;
+        }
    
     default:
         echo "Limeberry PHP Framework \n\n [!] Command not found. Please run 'get:help' for help.\n\n";
