@@ -1,5 +1,7 @@
 <?php
 
+use limeberry\Framework;
+
 /**
 *	Limeberry Framework
 *	
@@ -70,9 +72,23 @@ switch (Core::clearArg($argv[1])){
             Create::ViewLayout(APP.DS."view".DS ,Core::checkArg($argv[2]),Core::checkArg($argv[3]));
             break;
         }
+    case "info:fun" :
+        {
+            echo "\n\n\n".Core::Header()."\n\n\n";
+            break;
+        }
+    case "info:version" :
+        {
+            echo "\n\n\nLimeberry Framework Console \n";
+            echo "by Sinan SALIH \n";
+            echo "https://github.com/limeberry \n";
+            echo "Version: 1.0 \n\n";
+            echo "Please type info:help for more information. \n\n\n";
+            break;
+        }
    
     default:
-        echo "Limeberry PHP Framework \n\n [!] Command not found. Please run 'get:help' for help.\n\n";
+        echo "Limeberry PHP Framework \n\n [!] Command not found. Please run 'info:help' for help.\n\n";
         break;
 }
 

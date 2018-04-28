@@ -13,6 +13,59 @@
 
 class Core
 {
+    
+    /**
+     * CLI limeerry logo header
+     */
+    public static function Header()
+    {
+        $header = "
+\t\t                                                    .        
+\t\t                                     ,'+         
+\t\t                                  ,',;;          
+\t\t                               .+:,,',`          
+\t\t                             ,;,::::,'           
+\t\t                            '::::',,,            
+\t\t                           ;::::',:,+            
+\t\t                    '     '::::'::::             
+\t\t                    ::    ::::':::,.             
+\t\t                    ,,.  ::::'::::'              
+\t\t         .:;:.      ,:,  ;::;:::,+               
+\t\t      .''''''';;`   :;:; ,:;:::;. :;;;;;;,       
+\t\t     ''''''''';;;;  :::,  ::::; ;;;;;;;;;;;,     
+\t\t    '''''':,:';;;;; ;:;:  ';,  ;;;;;;;;;;;;;;    
+\t\t   '''':       :;;;; :::.+   `;;;;;     `;;;;;   
+\t\t  ''''           ;;;;`:;    `;;;;         .;;;;  
+\t\t `'''             ;;;;  ,` `;;;;           `;;;. 
+\t\t ''':             `;;;;   `;;;;             ,;;; 
+\t\t '''               .;;;; `;;;;               ;;; 
+\t\t.'''                .;;;;';;;                :;;,
+\t\t;'';                 ,;;;;';                 `;;;
+\t\t''':                  :;;;;                   ;;;
+\t\t:'';                 .';;;;:                  ;;;
+\t\t`'''                .;'';;;;,                `;;:
+\t\t '''               .;;;' ;;;;.               ;;;,
+\t\t ''''             .;;;;   ;;;;.              ;;; 
+\t\t '''.           .;;;;     ;;;;`            ;;;; 
+\t\t  ''''.         ,;;;;       ;;;;           :;;;  
+\t\t   '''''       ;;;;;         ;;;;,        ;;;;:  
+\t\t    '''''''''';;;;;           ;;;;;:   `;;;;;;   
+\t\t     ;'''''''';;;:             ;;;;;;;;;;;;;:    
+\t\t       ;'''''';;                ,;;;;;;;;;;      
+\t\t          ```                     `:;;;;,        
+\t\t
+\n\n\n\n
+
+\t\t LIMEBERRY PHP FRAMEWORK \n
+\t\t by: Sinan SALIH \n
+\t\t Source: https://github.com/limeberry \n
+\t\t Thanks for using Limeberry Framework
+";
+        
+        
+        return $header;
+    }
+    
     /**
      * This method is used to clear commands get from cli.
      * @param string $args Command line argument
