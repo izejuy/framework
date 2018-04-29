@@ -72,6 +72,18 @@ switch (Core::clearArg($argv[1])){
             Create::ViewLayout(APP.DS."view".DS ,Core::checkArg($argv[2]),Core::checkArg($argv[3]));
             break;
         }
+    case "create:backup" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::Backup(dirname(APP), Core::checkArg($argv[2]));
+            break;
+        }
+    case "create:flashback" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::Flashback(dirname(APP), Core::checkArg($argv[2]));
+            break;
+        }
     case "info:fun" :
         {
             echo "\n\n\n".Core::Header()."\n\n\n";

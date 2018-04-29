@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  *	Limeberry Framework
  *
@@ -188,4 +189,66 @@ class Create
             echo "\n [!] Error while creating new item in project. Error message: \n{$e->getMessage()}";
         }
     }
+
+
+    
+    /**
+     * This method creates a backup of your project
+     * @param string $path path for limeberry app
+     */
+    public static function Backup($path, $to)
+    {
+        try{
+            $projectDir = realpath($path);
+            
+            $pBackupArchieve = new ZipArchive();
+            
+            $pBackupArchieve->open($to.date("m.d.y_H.i.s").'_backup.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
+            
+            $files = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator($projectDir),
+                RecursiveIteratorIterator::LEAVES_ONLY
+                );
+            
+            foreach ($files as $name => $file)
+            {
+                if (!$file->isDir())
+                {
+                    $filePath = $file->getRealPath();
+                    $relativePath = substr($filePath, strlen($projectDir) + 1);
+                    $pBackupArchieve->addFile($filePath, $relativePath);
+                }
+            }
+            $pBackupArchieve->close();
+            echo "\n [+] Backup completed. Please check {$to} for your backup.\n\n";
+        }catch (Exception $e){
+            echo "\n [!] Error while creating backup. Error message: \n{$e->getMessage()}";
+        }
+    }
+    
+    
+    
+    
+    /**
+     * This method creates a backup of your project
+     * @param string $path path for limeberry app
+     */
+    public static function Flashback($path, $from)
+    {
+        try{
+            $zip = new ZipArchive;
+            $fback = $zip->open($from);
+            if ($fback === TRUE) {
+                $zip->extractTo($path);
+                $zip->close();
+                echo "\n [+] Flashback completed. You have installed a previous version of your project.\n\n";
+            }
+        }catch (Exception $e){
+            echo "\n [!] Error(s) occured while installing a backup. Error message: \n{$e->getMessage()}";
+        }
+    }
+    
+    
+
+
 }
