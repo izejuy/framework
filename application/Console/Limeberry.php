@@ -84,6 +84,12 @@ switch (Core::clearArg($argv[1])){
             Create::Flashback(dirname(APP), Core::checkArg($argv[2]));
             break;
         }
+    case "info:scandir" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::getTree(APP. DS .Core::checkArg($argv[2], true));
+            break;
+        }
     case "info:fun" :
         {
             echo "\n\n\n".Core::Header()."\n\n\n";

@@ -82,13 +82,16 @@ class Core
      * @param string $args Command line argument
      * @return string
      */
-    public static function checkArg(&$args)
+    public static function checkArg(&$args, $disable_error_message = false)
     {
         if(isset($args))
         {
             return self::clearArg($args);
         }else{
-            echo "\n [!] Please set a name for your component after create command.\n";
+            if((!$disable_error_message))
+            {
+                echo "\n [!] Please set a name for your component after create command.\n";
+            }
         }
     }
     

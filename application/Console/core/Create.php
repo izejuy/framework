@@ -249,6 +249,26 @@ class Create
     }
     
     
-
-
+    /**
+     * This method prints a directory structure of your project.
+     * @param string $path path for limeberry app
+     */
+    public static function getTree($path)
+    {
+        if(!(is_file($path)))
+        {
+            foreach (scandir($path) as $item){
+                if(!($item == "." || $item =="..")){
+                    echo "--> {$item} \n";
+                }
+            }
+        }else{
+            echo "\n\n\n [------- {$path} -----] \n\n\n ";
+            echo (file_get_contents($path));
+            echo"\n\n\n ------------------------------------------------------- \n";
+        }
+        
+    }
+    
+   
 }
