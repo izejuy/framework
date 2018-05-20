@@ -95,6 +95,13 @@ switch (Core::clearArg($argv[1])){
             echo "\n\n\n".Core::Header()."\n\n\n";
             break;
         }
+    case "info:help" :
+        {
+            echo "\n\n\nLimeberry Framework Documentation \n";
+            echo "Visit: https://limeberry.github.io/docs/index.html ";
+            echo "\n\n\n";
+            break;
+        }
     case "info:version" :
         {
             echo "\n\n\nLimeberry Framework Console \n";
