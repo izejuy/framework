@@ -13,6 +13,8 @@
 
 namespace limeberry\io
 {
+    use limeberry\Configuration;
+    
         /**
          * This library contains functions which provides you access to special application directories
          * like controller folder, view folder etc..
@@ -26,8 +28,7 @@ namespace limeberry\io
 		*/
 		public static function ApplicationFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder;
+                    return ROOT.DS.Configuration::getApplicationFolder();
 		}
 
 		/**
@@ -36,8 +37,7 @@ namespace limeberry\io
 		*/
 		public static function FrameworkFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.'limeberry';
+                    return ROOT.DS.'limeberry';
 		}
 
 
@@ -48,8 +48,7 @@ namespace limeberry\io
 		*/
 		public static function ControllerFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'controller';
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'controller';
 		}
 
 		/**
@@ -58,8 +57,7 @@ namespace limeberry\io
 		*/
 		public static function ConfigFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'config';
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'config';
 		}
 
 		/**
@@ -68,8 +66,7 @@ namespace limeberry\io
 		*/
 		public static function LibraryFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'library';
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'library';
 		}
 
                 /**
@@ -78,8 +75,7 @@ namespace limeberry\io
 		*/
 		public static function LanguageFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'language';
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'language';
 		}
 
                 
@@ -89,8 +85,7 @@ namespace limeberry\io
 		*/
 		public static function ModelFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'model';	
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'model';	
 		}
                 
                 /**
@@ -99,8 +94,7 @@ namespace limeberry\io
 		*/
 		public static function OutputFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'output';	
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'output';	
 		}
 
 		/**
@@ -109,8 +103,7 @@ namespace limeberry\io
 		*/
 		public static function TemplateFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'template';
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'template';
 		}
 
 		/**
@@ -119,8 +112,7 @@ namespace limeberry\io
 		*/
 		public static function ViewFolder()
 		{
-			global $application_folder;
-			return ROOT.DS.$application_folder.DS.'view';
+                    return ROOT.DS.Configuration::getApplicationFolder().DS.'view';
 		}
          
 	}
