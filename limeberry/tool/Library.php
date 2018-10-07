@@ -46,10 +46,10 @@ namespace limeberry\tool
  
         private static function checkFile($filepath)
         {
-                if(file_exists($filepath))
-                {
-                        return true;
-                }else {return false;}
+            if(file_exists($filepath))
+            {
+                    return true;
+            }else {return false;}
         }
 
         /**
