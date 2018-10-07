@@ -31,8 +31,12 @@ namespace limeberry\tool
             if(isset($getName)){
                     $this->ssName = $getName;
             }
-            if (session_status() == PHP_SESSION_NONE) {
-                session_start();
+            
+            /**
+             * If sessions is not started try to start.
+             */
+            if(!isset($_SESSION)) { 
+                session_start(); 
             }
         }
 
@@ -58,8 +62,8 @@ namespace limeberry\tool
         {
             if(isset($_SESSION[$id]))
             {
-                    session_unset($_SESSION[$id]);
-                    return true;
+                session_unset($_SESSION[$id]);
+                return true;
             }else{return false;}
 
         }
@@ -97,7 +101,7 @@ namespace limeberry\tool
         {
             if(isset($_SESSION[$id]))
             {
-                    return $_SESSION[$id];
+                return $_SESSION[$id];
             }
         }
 
@@ -149,7 +153,7 @@ namespace limeberry\tool
             foreach ($toClear as $key=> $value) {
                 if(isset($_SESSION[$key]))
                 {
-                        unset($_SESSION[$key]);
+                    unset($_SESSION[$key]);
                 }
                 else{ return false;}
             }
