@@ -26,7 +26,7 @@ Configuration::setApplicationFolder("application");
  * If your application will be a sub module/application of other application set it like:
  * "http://www.examplesite.com/my_module". 
  */
-Configuration::setApplicationUrl("http://localhost/limeberry");
+Configuration::setApplicationUrl("http://localhost/framework");
 
 /**
  * === [Is Application Root ] ===

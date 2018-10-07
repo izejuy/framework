@@ -192,16 +192,6 @@ namespace limeberry
             }           
         }
         
-
-        
-        /**
-         * Version Number of Framework.
-         * @return string
-         */
-        public static function Version()
-        {
-            return "1.x";
-        }
     }
 }
 ?>
