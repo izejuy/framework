@@ -121,7 +121,21 @@ namespace limeberry\forms
                                 $modelClass->$key = $_POST[$key];
                             }
                         }
-                        $modelClass->{$actionName}();
+                        
+                        //check if csrf_field instialized and if its matchs
+                        if(isset($_POST["csrf_field"])){
+                            
+                            if($_POST["csrf_field"] == sha1(\limeberry\Url::getUrl())){
+                                //CSRF USED VALUE MATCHED
+                                $modelClass->{$actionName}();
+                            }else{
+                                //CSRD USED VALUE NOT MATCHED
+                            }
+                        }else{
+                            //CSRF protection not enabled
+                            $modelClass->{$actionName}();
+                        }
+                        
 		    }
             }
             
