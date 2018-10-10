@@ -28,7 +28,7 @@ namespace limeberry
          * Last configuration on core framework files of the Limeberry
          */
         public static function LastUpdate(){
-            return "10.10.2018";
+            return "11.10.2018";
         }
     }
     
