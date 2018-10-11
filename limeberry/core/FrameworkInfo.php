@@ -10,7 +10,7 @@
 *	@copyright Copyright (C) 2018 Sinan SALIH
 *	
 **/
-namespace limeberry
+namespace limeberry\core
 {
     /**
      * FrameworkInfo class contains information and version data of the framework. 
@@ -21,14 +21,14 @@ namespace limeberry
          * Returns version number of Limeberry PHP
          */
         public static function VersionNumber(){
-            return "1.2.1@dev";
+            return "1.2.1@pre-release";
         }
         
         /**
          * Last configuration on core framework files of the Limeberry
          */
         public static function LastUpdate(){
-            return "11.10.2018";
+            return "1.2@10.1 Update -  October 2018 ";
         }
     }
     
