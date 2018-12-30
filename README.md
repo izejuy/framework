@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/limeberry/framework/master/application/template/img/limeberry.logo_binary.png" width="256" />
+  <img src="https://raw.githubusercontent.com/limeberry/docs/master/assets/img/limeberry.logo.png" />
 </p>
 
 <p align="center">
