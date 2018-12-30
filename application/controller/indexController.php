@@ -1,7 +1,7 @@
 <?php
 
 use limeberry\Controller As myController;
-
+use limeberry\core\Resources;
 
 class indexController extends myController{
     

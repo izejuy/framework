@@ -6,8 +6,8 @@
      * You have been redirected to this view from Index controller and IndexAction.
      */
     use limeberry\Page;
-    use limeberry\FrameworkInfo as fwi;
-
+    use limeberry\Core\FrameworkInfo as fwi;
+    
     $view = new Page();
     $view->SetLayout("master.php");
     $view->BeginContent();
@@ -29,9 +29,10 @@
                 padding: 10px;
                 margin: 25px;
                 border-bottom: 2px solid transparent;
+                
             }a:hover{
-                color:#C62828;
-                border-bottom: 2px solid #C62828;
+                color:#DC3666;
+                border-bottom: 2px solid #DC3666;
             }
             .content{width: 100%; }
             .box{
@@ -42,21 +43,22 @@
             .box img{ width: 300px; }
             .box .welcomeHeader{
                 font-size: 48px;
-                color:#EB3449;
+                color:#DC3666;
                 font-weight: lighter;
             }
             .box .welcomeHeader b{
-                color:#F45C43;
+                color:#A51E62;
             }
             
             .frameworkinfo
             {
-                background-color: #FAFAFA;
+                background-color: #FFFFFF;
                 color:#313140;
-                border-radius: 8px;
-                border: 1px solid #BDBDBD;
                 padding: 12px;
                 font-size: large;
+                -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
                 
             }
         </style>
@@ -65,7 +67,7 @@
     <div class="box">
         <center>
             <img src="<?= $view->includeFile("img/limeberry.logo.png"); ?>"> <br>
-            <span class="welcomeHeader">Lime<b>berry</b></span> <br>
+            <span class="welcomeHeader">Limeberry</span> <br>
             <b>Version: </b> <?= fwi::VersionNumber(); ?>
             <br><br>
         </center>
@@ -95,8 +97,7 @@
     <br>       
 </div>
         
-        
-        
+          
         
 <?php 
     $view->EndContent(); 

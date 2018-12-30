@@ -8,7 +8,7 @@
  *
  *	@package Limeberry Framework
  *	@author Sinan SALIH
- *	@copyright Copyright (C) 2018 Sinan SALIH
+ *	@copyright Copyright (C) 2018-2019 Sinan SALIH
  *
  **/
 
@@ -247,6 +247,28 @@ class Create
             echo "\n [!] Error(s) occured while installing a backup. Error message: \n{$e->getMessage()}";
         }
     }
+
+
+    
+    
+    
+    /**
+     * This method creates an empty resource file
+     * @param string $path path for limeberry app
+     */
+    public static function Resource($path)
+    {
+        try{
+            $ins = file_get_contents(INSTANCES."resource.instance");
+            file_put_contents($path."resources.xml", $ins);
+            echo "\n [+] Your new empty resource file created\n\n";
+        }catch (Exception $e)
+        {
+            echo "\n [!] Error while creating new item in project. Error message: \n{$e->getMessage()}";
+        }
+
+    }
+
     
     
     /**

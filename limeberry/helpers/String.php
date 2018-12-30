@@ -7,7 +7,7 @@
 *	
 *	@package Limeberry Framework
 *	@author Sinan SALIH
-*	@copyright Copyright (C) 2018 Sinan SALIH
+*	@copyright Copyright (C) 2018-2019 Sinan SALIH
 *	
 **/
 namespace limeberry\helpers
@@ -16,7 +16,7 @@ namespace limeberry\helpers
     /**
      * This is a helper class for strings. It's adds various features to srings
      */
-    class String
+    class StringHelper
     {
         private $sting_data = "";
         

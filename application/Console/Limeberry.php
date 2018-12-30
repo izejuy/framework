@@ -9,7 +9,7 @@ use limeberry\Framework;
 *	
 *	@package Limeberry Framework
 *	@author Sinan SALIH
-*	@copyright Copyright (C) 2018 Sinan SALIH
+*	@copyright Copyright (C) 2018-2019 Sinan SALIH
 *	
 **/
 
@@ -82,6 +82,12 @@ switch (Core::clearArg($argv[1])){
         {
             require_once $core.DS.'Create.php';
             Create::Flashback(dirname(APP), Core::checkArg($argv[2]));
+            break;
+        }
+    case "create:resource" :
+        {
+            require_once $core.DS.'Create.php';
+            Create::Resource(dirname(APP));
             break;
         }
     case "info:scandir" :

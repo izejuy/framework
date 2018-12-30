@@ -18,6 +18,16 @@ Configuration::setEnvironment("development");
  */
 Configuration::setApplicationFolder("application");
 
+
+/**
+ * === [Application Resource Files ] ===
+ * This function is used to set the
+ * path of the resource.xml file which is used
+ * to store static values for your projects(ex; strings, image paths etc)
+ * Note; the core app location ('application' by default) is excluded from the value.
+ */
+Configuration::setResourceFile("resources.xml");
+
 /**
  * === [Application URL ] ===
  * This configuration is used to set your

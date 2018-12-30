@@ -7,7 +7,7 @@
 *	
 *	@package Limeberry Framework
 *	@author Sinan SALIH
-*	@copyright Copyright (C) 2018 Sinan SALIH
+*	@copyright Copyright (C) 2018-2019 Sinan SALIH
 *	
 **/
 namespace limeberry\core
@@ -21,14 +21,14 @@ namespace limeberry\core
          * Returns version number of Limeberry PHP
          */
         public static function VersionNumber(){
-            return "1.2.1@pre-release";
+            return "2.0.0@stable";
         }
         
         /**
          * Last configuration on core framework files of the Limeberry
          */
         public static function LastUpdate(){
-            return "1.2@10.1 Update -  October 2018 ";
+            return "2.0@1.1 Update -  January First Update ";
         }
     }
     

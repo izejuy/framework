@@ -1,5 +1,15 @@
 <?php
 
+/**
+*	Limeberry Framework
+*	
+*	a php framework for fast web development.
+*	
+*	@package Limeberry Framework
+*	@author Sinan SALIH
+*	@copyright Copyright (C) 2018-2019 Sinan SALIH
+*	
+**/
 namespace limeberry
 {
     /**
@@ -29,6 +39,11 @@ namespace limeberry
         private static $application_query_data; 
         /** @ignore */
         private static $errors_enabled;
+        /** @ignore */
+        private static $application_resource_file;
+
+        
+
         
         /**
          * Initialize  default application configuration.
@@ -44,7 +59,8 @@ namespace limeberry
             self::$application_name = "Limeberry Application";
             self::$application_version = "1.0.0";
             self::$application_description = "Your description for the application";
-            self::$application_query_data = array();       
+            self::$application_query_data = array();
+            self::$application_resource_file = ROOT.DS.self::$application_folder.DS."resources.xml";  
         }
         
         
@@ -91,10 +107,10 @@ namespace limeberry
         * @param string $prm_folder_name Application's folder name
         * @return void 
         */
-	public static function setApplicationFolder($prm_folder_name="application")
+	    public static function setApplicationFolder($prm_folder_name="application")
         {
             self::$application_folder = $prm_folder_name;	
-	}
+	    }
                 
         /**
         * Returns application Folder
@@ -103,6 +119,21 @@ namespace limeberry
         public static function getApplicationFolder()
         {
             return self::$application_folder;
+        }
+
+
+        /**
+         * Set resource file location of limeberry framework
+         */
+        public static function setResourceFile($prm_resource_file = "resources.xml"){
+            self::$application_resource_file  = ROOT.DS.self::$application_folder.DS.$prm_resource_file;
+        }
+
+        /**
+         * get the resource file path.
+         */
+        public static function getResourceFile(){
+            return self::$application_resource_file;
         }
         
 
