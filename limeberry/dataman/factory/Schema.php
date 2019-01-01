@@ -17,15 +17,24 @@ namespace limeberry\dataman\factory
         private $version;
         private $database_name;
         private $table_generation;
-    
+        private $table_ungeneration;
+        private $fk_generated;
+
+
         public function __construct($database_name="default"){
             $this->database_name =   $database_name;
+            return $this;
         }
     
         public function Name($database_name="default"){
             $this->database_name = $database_name;
             return $this;
         }
+
+        public function getName(){
+            return $this->database_name;
+        }
+
         public function Version($database_version = 1){
             $this->version = $database_version;
             return $this;
@@ -38,6 +47,20 @@ namespace limeberry\dataman\factory
                 }
             }
             return $this;
+        }
+
+        public function ForeignKey($table1, $key1, $table2, $key2){
+            $this->fk_generated.="ALTER TABLE {$table1} ADD FOREIGN KEY ({$key1}) REFERENCES {$table2}({$key2}); \r\n";
+            return $this;
+        }
+        
+
+        public function getForeignKey(){
+            return $this->fk_generated;
+        }
+
+        public function getCreateTableScript(){
+            return $this->table_generation;
         }
     
         public function __toString()

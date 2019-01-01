@@ -2,9 +2,8 @@
 
 
 use limeberry\Controller;
-use limeberry\dataman\factory\Schema;
-use limeberry\dataman\factory\Table;
-use limeberry\dataman\factory\Column;
+use limeberry\dataman\MySqlConnect;
+use limeberry\dataman\factory\{Migration, Schema, Table, Column}; /** Define packages separately for php version 7+ */
 
 
 
@@ -20,18 +19,22 @@ class testController extends Controller{
 
         
         $schema = new Schema();
-        echo $schema->Name("test_db")
+        $schema->Name("eshop")
                 ->Version(1)
                 ->Tables(
                     new Table("users",
-                        new Column("userid","int","not null"),
+                        new Column("userid","int","not null AUTO_INCREMENT primary key"),
                         new Column("password","varchar(250)","not null")),
                     
                     
                     new Table("books",
-                        new Column("bookid", "int", "not null"),
+                        new Column("bookid", "int", "not null AUTO_INCREMENT primary key"),
                         new Column("userid", "int", "not null")
-                    ));
+                ))->ForeignKey("books", "userid", "users", "userid");
+                   
+        //echo $schema;
+
+        echo Migration::Up($schema, new MySqlConnect("localhost", "root", ""));
 
     }
 

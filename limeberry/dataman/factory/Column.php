@@ -23,7 +23,7 @@ namespace limeberry\dataman\factory
             $this->name = $name;
             $this->type = $type;
             $this->attributes = $attributes;
-            return "{$this->name} {$this->type} {$this->attributes}";   
+            return $this;  
         }
     
         public function __toString()

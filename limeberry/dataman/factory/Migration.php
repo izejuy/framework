@@ -29,40 +29,22 @@ namespace limeberry\dataman\factory
          * @return bool
          */
         public static function Up($schema, $db_instance){
-            if($schema->VersionCode() <= 1){
-                /**
-                 * Version Code is 1 or less than 1(means: Not Available)
-                 * Create schema in server without checking.
-                 */
-                try{
-                    $m_cmd = new DbCommand((String)$schema, $db_instance->Source());
-                    $m_cmd->Execute();
-                    $m_cmd->CloseCommand();
-                    self::addToBackStack(1, $db_instance);
-                    return true;
-                }catch(Exception $e){
-                    return false;
-                }
-            }else{
-                /**
-                 * version code is greater than 1 so update the
-                 * server's database set. if source schema version is greater than server's version
-                 */
-                if($schema->VersionCode() > self::CurrentVersion($db_instance)){
-                    try{
-                        $m_cmd = new DbCommand((String)$schema, $db_instance->Source());
-                        $m_cmd->Execute();
-                        $m_cmd->CloseCommand();
-                        self::addToBackStack($schema->VersionCode(), $db_instance);
-                        return true;
-                    }catch(Exception $e){
-                        return false;
-                    }
-                }else{
-                    //Good Luck with your project.
-                    //No need to update database.
-                }
+            $generated_script="";
+            
+            $generated_script .="CREATE DATABASE IF NOT EXISTS ".$schema->getName()."; \r\n";
+            $generated_script .="USE ".$schema->getName()."; \r\n\r\n";
+            $generated_script .= $schema->getCreateTableScript()."\r\n";
+            $generated_script .= $schema->getForeignKey()."\r\n";
+            try{
+                $cmd_create = new DbCommand($generated_script, $db_instance->Source());
+                $cmd_create->Execute();
+                $cmd_create->CloseCommand();
+                $db_instance->Close();
+            }catch(Exception $e){
+
             }
+            return $generated_script;
+           
         }
 
 
@@ -83,32 +65,6 @@ namespace limeberry\dataman\factory
          * @return bool
          */
         public static function Synch($schema, $db_instance){
-        }
-
-
-
-        public static function CurrentVersion($db_instance){
-            try{
-                $check = new DbCommand("select version from autopulse where id=(SELECT max(id) from autopulse);", $db_instance->Source());
-                $checked = $check->Fetch();
-                return $checked["version"];
-            }catch(Exeption $e){
-                return -1;
-            }
-        }
-
-
-        private static function addToBackStack($version_code, $db_instance){
-    
-            try{
-                if(self::CurrentVersion($db_instance) != $version_code){
-                    $cmd = new DbCommand("insert into autopulse(version) values(:code);", $db_instance->Source());
-                    $cmd->SetParameter(':code', $version_code);
-                    $cmd->Execute();
-                }
-            }catch(Exceoption $e){
-                return -1;
-            }
         }
 
     } 
