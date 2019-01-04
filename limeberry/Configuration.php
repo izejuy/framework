@@ -48,6 +48,7 @@ class Configuration
         self::$application_folder = 'application';
         self::$application_is_root = false;
         self::$application_is_urlsecure = false;
+        self::$errors_enabled = true;
         self::$application_unwanted_params = [];
         self::$application_install_url = 'localhost';
         self::$application_static_routes = [];
@@ -94,7 +95,7 @@ class Configuration
      */
     public function isErrorsEnabled()
     {
-        return self::$application_is_published;
+        return self::$errors_enabled;
     }
 
     /**
