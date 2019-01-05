@@ -32,10 +32,11 @@ In simple words; it is for you...
 ## Download
 
 <blockquote>
-  <h6>Via composer</h6>
-  > composer create-project limeberry/framework
+  composer create-project limeberry/framework
 </blockquote>
-Or clone this repository if you want to improve source code of limeberry framework
+You can use the composer to get the last version of Limeberry Framework. 
+
+
 
 
 ## Learning Limeberry Framework
