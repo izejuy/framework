@@ -31,4 +31,24 @@ class Model
             require_once $fileName;
         }
     }
+
+
+    /**
+     * This function is used to convert the instance of your model
+     * from object array to string array for using with 'Autopulse'
+     * library.
+     * @return array
+     */
+    public  function toArray()
+    {
+        $array_generated;
+        if(count(get_object_vars($this)) > 0){
+            foreach(get_object_vars($this) as $key=>$value){
+                $array_generated[$key] = $value;
+            }
+        }else{
+            $array_generated = array();
+        }
+        return $array_generated;
+    }
 }
