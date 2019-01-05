@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/limeberry/limeberry.github.io/master/media/limeberry.framework.png" />
+  <img src="https://raw.githubusercontent.com/limeberry/limeberry.github.io/master/media/limeberry.development.png" />
 </p>
 
 <p align="center">
@@ -7,7 +7,7 @@
 </p>
 
 ## Limeberry PHP Framework
-> This repository contains all source codes of limeberry framework. If you want to create a project using limeberry framework use the [limeberry repository](https://github.com/limeberry/limeberry).
+> This repository contains developer builds for limeberry framework. Developer builds usually not healthy for production. If you want to get the last features before they are published or want to impove source code of the core framework you can use this repository. For creating a new project with last stable release of Limeberry PHP Framework please use the  the [limeberry repository](https://github.com/limeberry/limeberry).
 
 Welcome to Limeberry PHP Framework. Limeberry is an excellent but straightforward application development framework. Limeberry aims to help you in your coding process by speeding up development with ready to use libraries that require minimal configuration. The structure was developed based on the MVC architectural design. You can check out some key featues of the framework;
    - [Easy Project And Environment Configuration](https://limeberry.github.io/docs/pages/configuration.html)
